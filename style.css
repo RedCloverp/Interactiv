@@ -1,0 +1,136 @@
+/* 1. Глобальные настройки и переменные */
+:root {
+    --font-main: 'Montserrat', sans-serif;
+    --color-background: #111111;
+    --color-text: #EAEAEA;
+    --color-accent: #FFD700; /* Золотой акцент */
+}
+
+html {
+    scroll-behavior: smooth; /* Плавная прокрутка */
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 2. Секция 1: Вступительный экран */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Занимает всю высоту экрана */
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://via.placeholder.com/1920x1080/444444/FFFFFF?text=Background) no-repeat center center/cover;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin: 0;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* 3. Секция 2: Scrollytelling */
+.scrollytelling-section {
+    display: flex;
+    padding: 5rem 0;
+}
+
+.scrolling-text {
+    flex: 1; /* Занимает половину ширины */
+    padding: 0 5%;
+}
+
+.text-step {
+    min-height: 80vh; /* Высота каждого шага, чтобы было что скроллить */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0; /* Изначально невидимы. JS добавит класс 'is-visible' для анимации */
+    animation: fadeIn 1s forwards; /* 'forwards' сохраняет конечное состояние */
+}
+
+.text-step h2 {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+}
+
+.text-step p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    max-width: 500px;
+}
+
+.sticky-visual {
+    flex: 1; /* Занимает вторую половину */
+    position: sticky; /* Ключевое свойство! */
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-content img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 4. Секция 3: Параллакс */
+.parallax-section {
+    height: 80vh;
+    background-image: url(https://via.placeholder.com/1920x1080/888888/FFFFFF?text=Parallax+BG);
+    background-attachment: fixed; /* Магия параллакса! */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax-content h2 {
+    font-size: 3rem;
+    
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+/* 5. Подвал */
+.main-footer {
+    text-align: center;
+    padding: 4rem 0;
+    font-size: 1.5rem;
+}
+
+/* 6. Адаптивность */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.5rem; }
+
+    .scrollytelling-section {
+        flex-direction: column; /* На мобильных ставим текст над картинкой */
+    }
+
+    .sticky-visual {
+        position: relative; /* Отключаем "липкость" */
+        height: 60vh; /* Уменьшаем высоту */
+    }
+}

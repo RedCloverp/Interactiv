@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивный Спецпроект</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Секция 1: Полноэкранный заголовок -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>История, рассказанная в движении</h1>
+            <p>Прокручивайте, чтобы начать</p>
+        </div>
+    </section>
+
+    <!-- Секция 2: Основной контент с "липким" изображением -->
+    <section class="scrollytelling-section">
+        <div class="scrolling-text">
+            <!-- Каждый 'text-step' - это отдельный смысловой блок -->
+            <div class="text-step">
+                <h2>Глава первая: Начало</h2>
+                <p>История начинается здесь. Пока вы читаете этот текст, изображение справа остается на месте, создавая контекст.</p>
+            </div>
+            <div class="text-step">
+                <h2>Глава вторая: Развитие</h2>
+                <p>По мере прокрутки, мы могли бы сменить изображение с помощью JavaScript, чтобы оно соответствовало новому этапу повествования.</p>
+            </div>
+            <div class="text-step">
+                <h2>Глава третья: Кульминация</h2>
+                <p>Этот эффект позволяет сфокусировать внимание пользователя на тексте, не теряя при этом визуальную связь с историей.</p>
+            </div>
+        </div>
+        <div class="sticky-visual">
+            <!-- Этот блок будет "залипать" на экране -->
+            <div class="visual-content">
+                <img src="sun.jpg" alt="Визуальный элемент 1">
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция 3: Демонстрация эффекта параллакса -->
+    <section class="parallax-section">
+        <div class="parallax-content">
+            <h2>Мир в глубине</h2>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>Конец истории.</p>
+    </footer>
+
+</body>
+</html>
